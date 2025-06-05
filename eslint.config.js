@@ -10,7 +10,6 @@ export default tseslint.config(
   { ignores: ["dist"] },
   {
     extends: [
-      js.configs.recommended,
       ...tseslint.configs.strictTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
     ],
@@ -18,10 +17,16 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
+      "react-x": reactX,
+      "react-dom": reactDom,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
