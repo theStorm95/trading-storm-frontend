@@ -11,5 +11,13 @@ export default defineConfig({
       reporter: ["text", "json", "html"],
     },
     globals: true,
+    css: true,
+    environment: "jsdom",
+    setupFiles: ["./tests/setupTests.ts"],
+  },
+  css: {
+    modules: {
+      localsConvention: "camelCaseOnly",
+    },
   },
 });

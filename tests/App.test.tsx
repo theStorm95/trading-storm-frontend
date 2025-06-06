@@ -1,5 +1,10 @@
+import { render, screen } from "@testing-library/react";
+import App from "../src/App";
+
 describe("App component", () => {
   it("renders Hello world", () => {
-    expect(true).toBe(true);
+    render(<App />);
+
+    expect(screen.getByText("Hello world!")).toBeInTheDocument();
   });
 });
