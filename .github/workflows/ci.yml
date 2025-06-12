@@ -6,7 +6,7 @@ on:
       - "feature/*"
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     strategy:
